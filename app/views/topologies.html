@@ -1,0 +1,25 @@
+<div class="container">
+
+        <div data-ng-repeat="topology in topologies">
+            <div data-ng-repeat="a in topology">
+                <div data-ng-repeat="n in a"  ng-animate=" 'animate' ">
+                    <ul>
+                        <div class="container">
+                        <li>
+                            <h4>{{n.name}}</h4>
+                            <div>{{n.uri}}</div>
+                            <div ng-init="topologyHref = n.href" ng-click="active = !active" ng-class="{'expandcollapse-heading-collapsed': active, 'expandcollapse-heading-expanded': !active}" class="glyphicon glyphicon-chevron-down"></div>
+                            <div ng-controller="TopologyCtrl" class="well slideDown" ng-hide="active">
+                                <div class="expand-collapse-content">
+                                    {{top}}
+                                </div>
+                            </div>
+                        </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+</div>
+
